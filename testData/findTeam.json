@@ -1,0 +1,12 @@
+{
+  "orders": [{
+    "orderId": "242342343",
+    "candidateTeams": [
+      {
+        "teamId": "234234",
+        "teamName": "老虎狮子队",
+        "teamStatus": "pass"
+      }
+    ]
+    }]
+}
