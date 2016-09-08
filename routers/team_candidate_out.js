@@ -1,4 +1,8 @@
-module.exports = function(req, res, utility){
+var express = require('express');
+var router = express.Router();
+var utility = require('../utility.js');
+
+router.post('/', function(req, res, utility){
   // utility.makeAjaxFail(res);
   // return;
   console.log('Router team_candidate_out.js ...');
@@ -10,4 +14,7 @@ module.exports = function(req, res, utility){
       "orderId": req.body.orderID
     });
   },3000)
-}
+})
+
+
+module.exports = router;

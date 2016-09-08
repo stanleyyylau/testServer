@@ -1,4 +1,12 @@
-module.exports = function(req, res, moreOrders, utility){
+var express = require('express');
+var router = express.Router();
+var utility = require('../utility.js');
+
+//get Testing data
+var moreOrders = require("../testData/moreOrders.json");
+
+
+router.post('/', function(req, res, next){
   console.log('Router more_orders.js ...');
   console.log("someone ask for " + req.body.page + "th screen more orders");
   //to make your ajax fail, uncomment the line below
@@ -20,4 +28,6 @@ module.exports = function(req, res, moreOrders, utility){
       res.send(responseJson);
     },2000)
   }
-}
+})
+
+module.exports = router;

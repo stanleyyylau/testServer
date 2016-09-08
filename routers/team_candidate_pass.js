@@ -1,4 +1,8 @@
-module.exports = funciton(req, res, utility){
+var express = require('express');
+var router = express.Router();
+var utility = require('../utility.js');
+
+router.post('/', function(req, res, utility){
   console.log('Router team_candidate_pass.js ...');
   console.log('someone wants to pass '+ req.body.id + " in " + req.body.orderID + " order");
   console.log('so you must reject all others in this order ID');
@@ -10,4 +14,6 @@ module.exports = funciton(req, res, utility){
               "orderId": req.body.orderID
             });
   },3000)
-}
+})
+
+module.exports = router;

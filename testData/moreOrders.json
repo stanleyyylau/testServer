@@ -30,7 +30,7 @@
       "order_code": "等确认",
       "order_des": "再不申请就没有了"
     },
-    {"order_type": "zhongbao",
+    {"order_type": "baojia",
       "order_tag": "service",
       "order_title": "帮我收拾房间",
       "valid_date": "0728",
@@ -50,7 +50,7 @@
       "order_code": "等确认",
       "order_des": "快快来抢单子"
     },
-    {"order_type": "zhongbao",
+    {"order_type": "baojia",
       "order_tag": "service",
       "order_title": "打扫院子",
       "valid_date": "0728",
@@ -60,7 +60,7 @@
       "order_code": "等确认",
       "order_des": "餐饮和会展"
     },
-    {"order_type": "zhongbao",
+    {"order_type": "baojia",
       "order_tag": "service",
       "order_title": "装修房子2层",
       "valid_date": "0728",
@@ -80,7 +80,7 @@
       "order_code": "等确认",
       "order_des": "餐饮和会展"
     },
-    {"order_type": "zhongbao",
+    {"order_type": "baojia",
       "order_tag": "service",
       "order_title": "冲冲厕所，不臭的",
       "valid_date": "0728",

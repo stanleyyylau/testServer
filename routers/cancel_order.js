@@ -1,4 +1,9 @@
-module.exports = function(req, res, utility){
+var express = require('express');
+var router = express.Router();
+var utility = require('../utility.js');
+
+
+router.post('/', function(req, res, utility){
   console.log('Router cancel_order.js ...');
   console.log('someone wants to cancel ' + req.body.orderid + ' order');
   // utility.makeAjaxFail(res);
@@ -9,4 +14,6 @@ module.exports = function(req, res, utility){
       "orderId": req.body.orderid
     })
   })
-}
+})
+
+module.exports = router;

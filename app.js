@@ -2,18 +2,22 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var utility = require('./utility.js');
 
+/* routers here */
+var cancel_order = require('./routers/cancel_order');
+var detail_form = require('./routers/detail_form');
+var more_orders = require('./routers/more_orders');
+var rootRouter = require('./routers/root');
+var team_candidate_out = require('./routers/team_candidate_out');
+var team_candidate_pass = require('./routers/team_candidate_pass');
+
 var app = express();
 
 //get Testing data
 var moreOrders = require("./testData/moreOrders.json");
 
+
 app.use(express.static('public'));
-//bodyParser is used to read the JSON object the client sent
-
-// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
-
-// parse application/json
 app.use(bodyParser.json())
 
 //handling CORS issues
@@ -30,35 +34,17 @@ app.use(function(req, res, next) {
 //* 2, moreOrders data *//
 
 
-app.get('/', function(req, res){
-  var handler = require('./routers/root.js');
-  handler(req, res, moreOrders, utility);
-});
+app.use('/', rootRouter);
 
-app.post('/taozhongbao/detail_form', function(req, res){
-  var handler = require('./routers/detail_form.js')
-  handler(req, res, utility);
-});
+app.use('/taozhongbao/detail_form', detail_form);
 
-app.post('/test/api/more_orders', function(req, res){
-  var handler = require('./routers/more_orders.js')
-  handler(req, res, moreOrders, utility);
-});
+app.use('/test/api/more_orders', more_orders);
 
-app.post('/test/api/team_candidate_pass', function(req, res){
-  var handler = require('./routers/team_candidate_pass.js');
-  handler(req, res, utility);
-});
+app.use('/test/api/team_candidate_pass', team_candidate_pass);
 
-app.post('/test/api/cancel_order', function(req, res){
-  var handler = require('./routers/cancel_order.js');
-  handler(req, res, utility);
-});
+app.use('/test/api/cancel_order', cancel_order);
 
-app.post('/test/api/team_candidate_out', function(req, res){
-  var handler = require('./routers/team_candidate_out.js');
-  handler(req, res, utility);
-});
+app.use('/test/api/team_candidate_out', team_candidate_out);
 
 app.listen(4000, function () {
   console.log('Example app listening on port 4000!');
