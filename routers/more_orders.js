@@ -18,8 +18,8 @@ router.post('/', function(req, res, next){
     "result": []
   };
   responseJson.status = true;
-  if(whichPage >= moreOrders.allOrders.length){
-    responseJson.messsage = "暂时无更多数据显示";
+  if(whichPage >= 3){
+    responseJson.messsage = "没有记录了";
     res.send(responseJson);
   }else{
     responseJson.result[0] = moreOrders.allOrders[whichPage];

@@ -12,8 +12,6 @@ var team_candidate_pass = require('./routers/team_candidate_pass');
 
 var app = express();
 
-//get Testing data
-var moreOrders = require("./testData/moreOrders.json");
 
 
 app.use(express.static('public'));
@@ -45,6 +43,10 @@ app.use('/test/api/team_candidate_pass', team_candidate_pass);
 app.use('/test/api/cancel_order', cancel_order);
 
 app.use('/test/api/team_candidate_out', team_candidate_out);
+
+
+app.use('/edit_test', edit_test);
+
 
 app.listen(4000, function () {
   console.log('Example app listening on port 4000!');
